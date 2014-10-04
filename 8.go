@@ -25,18 +25,24 @@ func main () {
 	"05886116467109405077541002256983155200055935729725" +
 	"71636269561882670428252483600823257530420752963450"
 
-	runes := []string(s)
-		fmt.Println("runes", runes)
-	max := [] rune {'0','0','0','0'}
-	for i := 0; i < len(s) - 4; i++ {
-		snippet := runes[i:i+4]
+	runes := []rune(s)
+	max := [] int {0,0,0,0,0}
+	productMax := 0
+	for i := 0; i < len(s) - 5; i++ {
+		snippet := runes[i:i+5]
 		//fmt.Println("snippet", snippet)
-		productMax :=int(max[0]) * int(max[1]) * int(max[2]) * int(max[3])
-		productSnippet := int(snippet[0]) * int(snippet[1]) * int(snippet[2]) * int(snippet[3])
+		productMax = max[0] * max[1] * max[2] * max[3] * max[4]
+		productSnippet := runeToInt(snippet[0]) * runeToInt(snippet[1]) * runeToInt(snippet[2]) * runeToInt(snippet[3]) * runeToInt(snippet[4])
 		
 		if productSnippet > productMax {
-			max = snippet
+			for j := 0; j < 5; j++ {
+				max[j] = runeToInt(snippet[j])
+			}
 		}
 	}
-    fmt.Println("max snippet is", int(max[0]), int(max[1]), int(max[2]), int(max[3]))
+    fmt.Println("max snippet is", max[0], max[1], max[2], max[3], max[4], "which gives a product of", productMax)
+}
+
+func runeToInt(r rune) int {
+	return int(r - '0')
 }
