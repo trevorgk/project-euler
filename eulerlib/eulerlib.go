@@ -39,11 +39,15 @@ func Fibonacci() func() int {
 	}
 }
 
+func IsPrime (n int) bool {
+	return len(GetDivisors(n)) == 2
+}
+
 func LargestPrimeDivisor(n int) int {
 	divisors := GetDivisors(n)
 	largestPrime := 0
 	for _, value := range divisors {
-		if len(GetDivisors(value)) == 2 {
+		if IsPrime(value) {
 			if largestPrime < value {
 				largestPrime = value
 			}
@@ -53,10 +57,10 @@ func LargestPrimeDivisor(n int) int {
 }
 
 func GetDivisors(n int) []int {
-	bound := int(math.Sqrt(float64(n)))
+	bound := int(math.Sqrt(float64(n + 1)))
 	divisors := make([]int,0)
 	divisors = append(divisors, 1)
-	for i:= 2; i <= bound + 1; i++ {
+	for i:= 2; i <= bound; i++ {
 		if (n % i == 0) {
 			divisors = append(divisors, i, n/i)
 		}

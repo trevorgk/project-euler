@@ -11,6 +11,7 @@ type Triplet struct {
 	z int
 }
 
+// find a Pythagorean triplet for which a + b + c = n	
 func euler_9(n int) {
 
 	triplets := make([]Triplet,0)
@@ -33,5 +34,7 @@ func euler_9(n int) {
 			return	
 		}
 	}
+	
+	fmt.Println("triplet does not exist")
 
 }
