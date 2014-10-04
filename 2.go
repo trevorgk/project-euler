@@ -1,23 +1,19 @@
 package main
 
-import "fmt"
+import (	
+	"fmt"
+	"github.com/trevorgk/project-euler/eulerlib"
+)
+//	find the sum of the even-valued terms of fibonacci sequence where values
+//	do next exceed n
+func euler_2(n int) {
 
-func fibonacci() func() int {
-	x, y := 0, 1
-	return func() int {
-		x, y = y, x+y
-		return y - x
-	}
-}
-
-func main() {
-
-	f := fibonacci()
+	f := eulerlib.Fibonacci()
 	result := 0
-	for i := f(); i < 4000000; i = f() {
+	for i := f(); i < n; i = f() {
 		if i%2 == 0 {
 			result += i
 		}
 	}
-	fmt.Printf("result is: %d",result)
+	fmt.Println("result is",result)
 }

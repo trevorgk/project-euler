@@ -2,13 +2,15 @@ package main
 
 import "fmt"
 
-func main() {
+//	Find the sum of all the multiples of x or y below n
+func euler_1(x int, y int, n int) {
 
 	result := 0
-	for i := 1; i<1000;i++ {
-		if i % 3 == 0 || i % 5 == 0 {
+	for i := 1; i < (n - 1); i++ {
+		if i % x == 0 || i % y == 0 {
+			//fmt.Println("iteration",i)
 			result += i
 		}
 	}
-	fmt.Printf("result is %d\n", result)
+	fmt.Println("sum of all the multiples of", x, "or", y, "below", n, "is", result)
 }
