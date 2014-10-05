@@ -56,6 +56,8 @@ func main() {
 			euler_9(IntArg(flag.Arg(0)))
 		case 10:
 			euler_10(IntArg(flag.Arg(0)))
+		case 11:
+			euler_11()
 		default:
 			fmt.Println("solution not implemented")
 			return
