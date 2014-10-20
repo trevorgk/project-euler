@@ -9,9 +9,16 @@ import (
 
 func main() {
 	
-	probPtr := flag.Int("prob",1, "Problem to solve")
+	probPtr := flag.Int("prob",0, "Problem to solve")
 	flag.Parse()
 
+	if *probPtr == 0 {
+		fmt.Println("euler-console is a tool for running my own project euler solutions")
+		fmt.Println("Usage:")
+		fmt.Println("\t project-euler -prob=[num] [arg1] ...")
+		return
+	}
+	
 	fmt.Println("project euler, problem", *probPtr)
 	fmt.Println("arguments:", flag.Args())
 	fmt.Println("----------------------")
@@ -60,6 +67,8 @@ func main() {
 			euler_11()
 		case 12:
 			euler_12(500)
+		case 14:
+			euler_14()
 		default:
 			fmt.Println("solution not implemented")
 			return

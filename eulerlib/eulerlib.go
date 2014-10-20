@@ -92,3 +92,32 @@ func Exponent (num int, n int) int {
 	}
 	return result
 }
+
+
+func Collatz(startingNum int, doPrint bool) int {
+	num := startingNum
+	length := 0
+	
+	if doPrint { 
+		fmt.Print(num)
+	}
+	
+	for num != 1 {
+		length++
+		if num % 2 == 0 {
+			num = num/2
+		} else {
+			num = 3 * num + 1
+		}
+		if doPrint { 
+			fmt.Print("->", num)
+		}
+		
+	}
+	if doPrint { 	
+		fmt.Print("\n")
+	}
+	
+	return length
+}
+
