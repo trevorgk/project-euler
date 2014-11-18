@@ -20,5 +20,6 @@ func euler_14() {
 		}
 	}
 	
-	fmt.Println("Max starting number is: ", maxStartingNum)
+	fmt.Println("Max starting number is: ", maxStartingNum, "with a length of", maxLength)
+	eulerlib.Collatz(maxStartingNum, true)
 }
