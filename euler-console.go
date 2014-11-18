@@ -69,6 +69,8 @@ func main() {
 			euler_12(500)
 		case 14:
 			euler_14()
+		case 16:
+			euler_16(Float64Arg (flag.Arg(0)))
 		default:
 			fmt.Println("solution not implemented")
 			return
@@ -81,6 +83,12 @@ func main() {
 
 func IntArg(s string) int {
 	k, _ := strconv.Atoi(s)
+
+	return k
+}
+
+func Float64Arg(s string) float64 {
+	k, _ := strconv.ParseFloat(s, 64)
 
 	return k
 }
