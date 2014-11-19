@@ -3,8 +3,9 @@ package eulerlib
 import (
 	"fmt"
 	"math"
+	"unicode/utf8"
+	"strings"
 )
-
 
 func RuneToInt(r rune) int {
 	return int(r - '0')
@@ -121,3 +122,15 @@ func Collatz(startingNum int, doPrint bool) int {
 	return length
 }
 
+func WordCount(verbiage string, includeWhitespace bool) int {
+	if (includeWhitespace) {
+		return utf8.RuneCountInString(verbiage)
+	}
+	sum, split := 0, strings.Split(verbiage, " ")
+
+	for i := 0; i < len(split); i++ {
+		sum += utf8.RuneCountInString(split[i])
+	}
+
+	return sum
+}
