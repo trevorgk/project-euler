@@ -37,6 +37,8 @@ func main() {
 			euler_5(IntArg(flag.Arg(0)))
 		case 6:
 			euler_6(IntArg(flag.Arg(0)))
+		case 7:
+			euler_7(IntArg(flag.Arg(0)))
 		case 8:
 			s := "73167176531330624919225119674426574742355349194934" + 
 				"96983520312774506326239578318016984801869478851843" + 
