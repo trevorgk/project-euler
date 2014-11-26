@@ -75,6 +75,8 @@ func main() {
 			euler_16(Float64Arg(flag.Arg(0)))
 		case 17:
 			euler_17()
+		case 19:
+			euler_19()
 		default:
 			fmt.Println("solution not implemented")
 			return

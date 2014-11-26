@@ -5,6 +5,8 @@ import (
 	"math"
 	"unicode/utf8"
 	"strings"
+	"time"
+	"errors"
 )
 
 func RuneToInt(r rune) int {
@@ -133,4 +135,35 @@ func WordCount(verbiage string, includeWhitespace bool) int {
 	}
 
 	return sum
+}
+
+func IsLeapYear(year int) bool {
+	return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)
+}
+
+func DaysInMonth(month time.Month, year int) int {
+	switch (month){
+	case time.September:
+	case time.April:
+	case time.June:
+	case time.November:
+		return 30
+	case time.February:
+		if IsLeapYear(year) {
+			return 29
+		}
+
+		return 28
+	}
+
+	return 31
+}
+
+func DateIsA(weekday time.Weekday, day int, month time.Month, year int) (bool, error)  {
+	daysInMonth := DaysInMonth(month, year)
+
+	if (day > daysInMonth){
+		return false, errors.New("days in month exceeded")
+	}
+	return true, nil
 }
