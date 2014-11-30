@@ -94,9 +94,25 @@ func Collatz(startingNum int, doPrint bool) int {
 		}
 		
 	}
+
 	if doPrint { 	
 		fmt.Print("\n")
 	}
 	
 	return length
+}
+
+//	see http://simple.wikipedia.org/wiki/Exponentiation_by_squaring
+func BinaryExponent(x uint64, n int) uint64 {
+
+	fmt.Println("BinaryExponent", x, "**", n)
+	if n == 1 {
+		return x
+	}
+	
+	if n % 2 == 0 {
+		return BinaryExponent(x * x, n/2)
+	}
+
+	return x * BinaryExponent(x * x, (n-1)/2)
 }
