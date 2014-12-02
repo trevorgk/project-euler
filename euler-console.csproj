@@ -74,7 +74,15 @@
     <None Include=".git\refs\heads\master" />
     <None Include=".git\refs\remotes\origin\HEAD" />
     <None Include=".git\refs\remotes\origin\master" />
-    <None Include="1.go" />
+    <None Include="01.go" />
+    <None Include="02.go" />
+    <None Include="03.go" />
+    <None Include="04.go" />
+    <None Include="05.go" />
+    <None Include="06.go" />
+    <None Include="07.go" />
+    <None Include="08.go" />
+    <None Include="09.go" />
     <None Include="10.go" />
     <None Include="11.go" />
     <None Include="12.go" />
@@ -83,17 +91,11 @@
     <None Include="17.go" />
     <None Include="18.go" />
     <None Include="19.go" />
-    <None Include="2.go" />
     <None Include="20.go" />
-    <None Include="3.go" />
-    <None Include="4.go" />
-    <None Include="5.go" />
-    <None Include="6.go" />
-    <None Include="7.go" />
-    <None Include="8.go" />
-    <None Include="9.go" />
     <None Include="euler-console.go" />
-    <None Include="eulerlib\eulerlib.go" />
+    <None Include="eulerlib\math.go" />
+    <None Include="eulerlib\strings.go" />
+    <None Include="eulerlib\time.go" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
