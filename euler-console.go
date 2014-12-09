@@ -72,7 +72,7 @@ func main() {
 		case 14:
 			euler_14()
 		case 16:
-			euler_16(Float64Arg(flag.Arg(0)))
+			euler_16(IntArg(flag.Arg(0)))
 		case 17:
 			euler_17()
 		case 19:
