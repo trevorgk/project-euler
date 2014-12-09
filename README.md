@@ -1,2 +1,3 @@
-project-euler
-=============
+euler-console is a tool for running my own project euler solutions
+Usage:
+	 project-euler -prob=[num] [arg1] ...
