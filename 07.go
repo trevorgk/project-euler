@@ -5,7 +5,7 @@ import (
 	"github.com/trevorgk/project-euler/eulerlib"
 )
 
-
+//	What is the 10,001st prime number?
 func euler_7(max int) {
 	
 	num := 1

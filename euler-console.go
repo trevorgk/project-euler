@@ -25,23 +25,23 @@ func main() {
 	start := time.Now()
 
 	switch *probPtr {
-		case 1:
-			euler_1(IntArg(flag.Arg(0)), IntArg(flag.Arg(1)), IntArg(flag.Arg(2)))
-		case 2:
-			euler_2(IntArg(flag.Arg(0)))
-		case 3:
-			euler_3(IntArg(flag.Arg(0)))
-		case 4:
-			euler_4(IntArg(flag.Arg(0)))
-		case 5:
-			euler_5(IntArg(flag.Arg(0)))
-		case 6:
-			euler_6(IntArg(flag.Arg(0)))
-		case 7:
-			euler_7(IntArg(flag.Arg(0)))
-		case 8:
-			s := "73167176531330624919225119674426574742355349194934" + 
-				"96983520312774506326239578318016984801869478851843" + 
+	case 1:
+		euler_1(IntArg(flag.Arg(0)), IntArg(flag.Arg(1)), IntArg(flag.Arg(2)))
+	case 2:
+		euler_2(IntArg(flag.Arg(0)))
+	case 3:
+		euler_3(IntArg(flag.Arg(0)))
+	case 4:
+		euler_4(IntArg(flag.Arg(0)))
+	case 5:
+		euler_5(IntArg(flag.Arg(0)))
+	case 6:
+		euler_6(IntArg(flag.Arg(0)))
+	case 7:
+		euler_7(IntArg(flag.Arg(0)))
+	case 8:
+		s := "73167176531330624919225119674426574742355349194934" +
+				"96983520312774506326239578318016984801869478851843" +
 				"85861560789112949495459501737958331952853208805511" +
 				"12540698747158523863050715693290963295227443043557" +
 				"66896648950445244523161731856403098711121722383113" +
@@ -60,28 +60,30 @@ func main() {
 				"84580156166097919133875499200524063689912560717606" +
 				"05886116467109405077541002256983155200055935729725" +
 				"71636269561882670428252483600823257530420752963450"
-			euler_8(s)
-		case 9:
-			euler_9(IntArg(flag.Arg(0)))
-		case 10:
-			euler_10(IntArg(flag.Arg(0)))
-		case 11:
-			euler_11()
-		case 12:
-			euler_12(500)
-		case 14:
-			euler_14()
-		case 16:
-			euler_16(IntArg(flag.Arg(0)))
-		case 17:
-			euler_17()
-		case 18:
-			euler_18()
-//		case 19:
-//			euler_19()
-		default:
-			fmt.Println("solution not implemented")
-			return
+		euler_8(s)
+	case 9:
+		euler_9(IntArg(flag.Arg(0)))
+	case 10:
+		euler_10(IntArg(flag.Arg(0)))
+	case 11:
+		euler_11()
+	case 12:
+		euler_12(500)
+	case 14:
+		euler_14()
+	case 16:
+		euler_16(IntArg(flag.Arg(0)))
+	case 17:
+		euler_17()
+	case 18:
+		euler_18()
+	case 19:
+		euler_19()
+	case 20:
+		euler_20(IntArg(flag.Arg(0)))
+	default:
+		fmt.Println("solution not implemented")
+		return
 	}
 
  	elapsed := time.Since(start)

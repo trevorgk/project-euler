@@ -4,6 +4,8 @@ import (
 	//"github.com/trevorgk/project-euler/eulerlib"
 	"fmt"
 )
+
+//Find the maximum total from top to bottom of the triangle below
 func euler_18 () {
 	grid := [][]int {
 		[]int{			  				  75							},	//	0
@@ -28,9 +30,6 @@ func euler_18 () {
 func subTree(grid [][]int, pos int) (subTree [][]int){
 	//	subtree length = length(grid) - 1
 	subTree = make([][]int, len(grid) - 1)
-	//subTree[0] = make([]int, 1);
-	//subTree[0][0] = grid[1][pos];
-	//fmt.Printf("subTree[0][0] = %d\n", grid[1][pos])
 
 	for i := 0; i < len(grid) - 1; i++ {
 		subTree[i] = make([]int, i + 1);
@@ -48,6 +47,7 @@ func getAvailablePositions(pos int) (left, right int){
 	return pos, pos+1;
 }
 
+//	deprecated in favour of recursive version
 func maxTraverse(grid [][]int) (total int){
 	total = 0;
 	for i, pos := 0,0; i < len(grid) - 1; i++{

@@ -3,6 +3,7 @@
 import (
 	"fmt"
 	"math"
+	"math/big"
 )
 
 func SumOfSquares(n int) int {
@@ -115,4 +116,21 @@ func BinaryExponent(x uint64, n int) uint64 {
 	}
 
 	return x * BinaryExponent(x * x, (n-1)/2)
+}
+
+func FactorialInt(n int64) *big.Int {
+	return Factorial(big.NewInt(n))
+}
+
+func Factorial(n *big.Int) *big.Int {
+	one := big.NewInt(1)
+	if n == one {
+		//fmt.Printf("1")
+		return one
+	}
+	//fmt.Printf("%d * ", n)
+
+	j := new(big.Int).Sub(n, one)
+	i := new(big.Int).Mul(n, Factorial(j))
+	return i
 }

@@ -8,7 +8,7 @@ import (
 	//"strconv"
 )
 
-//	What is the sum of the digits of the number 2^n
+//	Find the sum of the digits of the number 2^n
 func euler_16(n int) {
 	pow := eulerlib.BinaryExponent(2, n)
 	fmt.Printf("2**%v yields %v\n", uint64(n), pow)//, ([]byte(pow)))

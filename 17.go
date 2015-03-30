@@ -2,22 +2,21 @@ package main
 
 import (
 	"fmt"
-	//"strconv"
 	"strings"
 	//"github.com/trevorgk/project-euler/eulerlib"
 )
-/*
-func processChunks(num int, place int, title string) string{
-	if (num >= place) {
-		mod := num % place
-		if (mod == 0) {
-			return chunk(num/place) + " " + title
-		}
-		return chunk(num/place) + " " + title + " and " + chunk(num%place)
+
+//	If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?
+func euler_17() {
+
+	sum := 0
+	for i := 1; i <= 1000; i++ {
+		numericText := strings.TrimSpace(chunk(i))
+		sum += len(strings.Replace(numericText, " ", "", -1))
 	}
-	chunk(num)
+	fmt.Println("Answer is:", sum)
 }
-*/
+
 func chunk(num int) string {
 
 	million, thousand, hundred := 1000000, 1000, 100
@@ -111,16 +110,4 @@ func chunk(num int) string {
 	}
 
 	return ""
-}
-
-func euler_17() {
-
-	sum := 0
-	for i := 1; i <= 1000; i++ {
-		numericText := strings.TrimSpace(chunk(i))
-		sum += len(strings.Replace(numericText, " ", "", -1))
-	}
-	fmt.Println("Answer is:", sum)
-	//fmt.Println(numberAsString)
-	//fmt.Println(eulerlib.WordCount(s, false))
 }
