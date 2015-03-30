@@ -52,7 +52,7 @@ func LargestPrimeDivisor(n int) int {
 	return largestPrime
 }
 
-func GetDivisors(n int) []int {
+func GetDivisors(n int, includeSelf bool) []int {
 	bound := int(math.Sqrt(float64(n + 1)))
 	divisors := make([]int,0)
 	divisors = append(divisors, 1)
@@ -63,6 +63,18 @@ func GetDivisors(n int) []int {
 	}
 	divisors = append(divisors, n)
 	return divisors
+}
+
+func SumOfDivisors(n int) int {
+	sum, divisors := 0, GetDivisors(n);
+	for i := 0; i < len(divisors); i++ {
+		sum += divisors[i];
+	}
+	return sum;
+}
+
+func AreAmicablePairs(a int, b int) bool {
+	return SumOfDivisors(a) == SumOfDivisors(b);
 }
 
 func Exponent (num int, n int) int {
