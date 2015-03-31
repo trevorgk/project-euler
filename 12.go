@@ -14,7 +14,7 @@ func euler_12(numDivisors int) {
 	
 	for {
 		sum += i
-		divisors := eulerlib.GetDivisors(sum)
+		divisors := eulerlib.GetDivisors(sum, true)
 		
 		if len(divisors) > numDivisors {
 			fmt.Println(sum,":",divisors)

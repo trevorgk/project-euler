@@ -36,11 +36,11 @@ func Fibonacci() func() int {
 }
 
 func IsPrime (n int) bool {
-	return len(GetDivisors(n)) == 2
+	return len(GetDivisors(n, true)) == 2
 }
 
 func LargestPrimeDivisor(n int) int {
-	divisors := GetDivisors(n)
+	divisors := GetDivisors(n, true)
 	largestPrime := 0
 	for _, value := range divisors {
 		if IsPrime(value) {
@@ -61,12 +61,16 @@ func GetDivisors(n int, includeSelf bool) []int {
 			divisors = append(divisors, i, n/i)
 		}
 	}
-	divisors = append(divisors, n)
+
+	if includeSelf {
+		divisors = append(divisors, n)
+	}
+
 	return divisors
 }
 
 func SumOfDivisors(n int) int {
-	sum, divisors := 0, GetDivisors(n);
+	sum, divisors := 0, GetDivisors(n, false);
 	for i := 0; i < len(divisors); i++ {
 		sum += divisors[i];
 	}
@@ -74,10 +78,10 @@ func SumOfDivisors(n int) int {
 }
 
 func AreAmicablePairs(a int, b int) bool {
-	return SumOfDivisors(a) == SumOfDivisors(b);
+	return SumOfDivisors(a) == b && SumOfDivisors(b) == a;
 }
 
-func Exponent (num int, n int) int {
+func Exponent(num int, n int) int {
 	i := 1;
 	result := num
 	for i < n {
